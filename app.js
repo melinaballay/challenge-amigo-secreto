@@ -4,8 +4,8 @@
 let amigos = [];
 let amigosDisponibles = [];
 function agregarAmigo() {
-  const input = document.getElementById("amigo");
-  const nombre = input.value.trim();
+  let input = document.getElementById("amigo");
+  let nombre = input.value.trim();
 
   if (!/^[a-zA-ZÀ-ÿ\s]+$/.test(nombre)) {
     alert("Por favor, ingrese un nombre válido.");
@@ -24,10 +24,10 @@ function agregarAmigo() {
 }
 
 function mostrarLista() {
-  const lista = document.getElementById("listaAmigos");
+  let lista = document.getElementById("listaAmigos");
   lista.innerHTML = "";
   amigos.forEach((amigo, index) => {
-    const li = document.createElement("li");
+    let li = document.createElement("li");
     li.textContent = amigo;
     lista.appendChild(li);
   });
@@ -40,8 +40,8 @@ function sortearAmigo() {
     );
     return;
   }
-  const indiceAleatorio = Math.floor(Math.random() * amigosDisponibles.length);
-  const ganador = amigosDisponibles.splice(indiceAleatorio, 1)[0];
+  let indiceAleatorio = Math.floor(Math.random() * amigosDisponibles.length);
+  let ganador = amigosDisponibles.splice(indiceAleatorio, 1)[0];
   document.getElementById(
     "resultado"
   ).textContent = `El amigo secreto es: ${ganador}`;
